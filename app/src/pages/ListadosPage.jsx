@@ -5,6 +5,8 @@ import { getServiciosAdicionales } from "../services/serviciosAdicionalesService
 import { ServicioAdicionalList } from "../components/ServicioAdicionalList";
 import { getUsuarios } from "../services/usuariosService";
 import { UsuarioList } from "../components/UsuarioList";
+import { getServicios } from "../services/serviciosService";
+import { ServicioList } from "../components/ServicioList";
 
 export function ListadosPage(){
     const [loading, setLoading] = useState(null)
@@ -13,6 +15,7 @@ export function ListadosPage(){
     const [restriccionHorario, setRestriccionHorario] = useState([])
     const [servicioAdicional, setServicioAdicional] = useState([])
     const [usuario, setUsuario] = useState ([])
+    const [servicio, setServicio] = useState([])
     
     useEffect(() => {
         async function fetchRestriccionHorario() {
@@ -56,12 +59,28 @@ export function ListadosPage(){
             }
         }
         fetchUsuarios()
+
+        async function fetchServicios() {
+            try {
+                const data = await getServicios()
+                console.log(data)
+                setServicio(data.data)
+                console.log("Si se cargaron wey por favor")
+            } catch (error) {
+                console.error("Error al cargar servicios", error)
+                setError("Error al cargar servicios")
+            }
+        }
+
+        fetchServicios()
+        
     }, [])
 
         
 
     console.log("Estado restriccionHorario:", restriccionHorario);
     console.log("Estado serviciosAdicionales:", servicioAdicional);
+    console.log("Estado servicios:", servicio)
     
     if (loading) return <p className="text-center text-gray-500">Cargando eventos...</p>
     if (error) return <p className="text-center text-red-500">{error}</p>
@@ -73,6 +92,8 @@ export function ListadosPage(){
             <ServicioAdicionalList serviciosAdicionales={servicioAdicional}/>
             <hr />
             <UsuarioList usuario={usuario}/>
+            <hr />
+            <ServicioList servicios={servicio}></ServicioList>
         </section>
     )
 }

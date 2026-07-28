@@ -7,7 +7,6 @@ export function ServicioAdicionalList({ serviciosAdicionales }){
     if (serviciosAdicionales.length === 0){
         return <p>No hay servicios adicionales para mostrar</p>
     }
-    
 
     return (
         
