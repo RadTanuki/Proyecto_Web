@@ -8,8 +8,6 @@ export function ListadosPage(){
 
     const [restriccionHorario, setRestriccionHorario] = useState([])
     
-
-
     useEffect(() => {
         async function fetchRestriccionHorario() {
             try {
