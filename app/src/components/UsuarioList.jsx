@@ -24,26 +24,6 @@ export function UsuarioList({ usuario }){
     )
 }
 
-//      {
-//       "id": 2,
-//       "nombre": "María",
-//       "primerApellido": "López",
-//       "segundoApellido": "Mora",
-//       "correo": "maria@example.com",
-//       "telefono": "8888-8888",
-//       "activo": true,
-//       "rolId": 3,
-//       "creadoEn": "2026-07-28T01:47:54.285Z",
-//       "actualizadoEn": "2026-07-28T01:47:54.285Z",
-//       "rol": {
-//         "id": 3,
-//         "nombre": "Cliente",
-//         "descripcion": "Usuario que puede consultar sus citas y cancelarlas cuando corresponda.",
-//         "activo": true
-//       },
-//       "empleado": null
-//     }
-
 UsuarioList.propTypes={
     usuario:propTypes.array.isRequired
 }
