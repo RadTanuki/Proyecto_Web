@@ -10,7 +10,7 @@ import {
 } from "../dtos/cita.dto"
 
 /**
- * Información segura de usuario.
+ * Información segura de usuario.F
  *
  * Nunca devuelve passwordHash.
  */

@@ -3,5 +3,11 @@ export function toDateOnly(value: string) {
 }
 
 export function toTime(value: string) {
-    return new Date(`1970-01-01T${value}:00`);
+    const [hora, minuto] = value.split(":").map(Number);
+
+    const fecha = new Date(0);
+
+    fecha.setUTCHours(hora, minuto, 0, 0);
+
+    return fecha;
 }
