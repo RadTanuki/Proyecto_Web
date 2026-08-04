@@ -1,6 +1,16 @@
 import { useEffect, useState } from "react";
-import { Dumbbell, Moon, Sun } from "lucide-react";
+import { Dumbbell, Moon, Sun, UserRound } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+    NavigationMenu,
+    NavigationMenuContent,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu"
+import { Link } from "react-router-dom";
+
 
 export function Navbar() {
     const [darkMode, setDarkMode] = useState(true);
@@ -26,34 +36,89 @@ export function Navbar() {
                     </h1>
                 </div>
 
-                <div className="flex items-center gap-2 rounded-full border border-border bg-card/70 p-1 shadow-sm">
-                    <Button
-                        variant="ghost"
-                        className="rounded-full px-4 text-muted-foreground hover:bg-primary hover:text-primary-foreground"
-                    >
-                        Inicio
-                    </Button>
+                <div className="flex items-center gap-3 rounded-full border bg-card/70 px-10 py-1.5 shadow-sm">
+                    <NavigationMenu>
+                        <NavigationMenuList className="gap-3.5">
+                            <NavigationMenuItem>
+                                <NavigationMenuTrigger className="h-7 rounded-full border">
+                                    Inicio
+                                </NavigationMenuTrigger>
 
-                    <Button
-                        variant="ghost"
-                        className="rounded-full px-4 text-muted-foreground hover:bg-primary hover:text-primary-foreground"
-                    >
-                        Registrarse
-                    </Button>
+                                <NavigationMenuContent>
+                                    <ul className="grid w-l gap-2 p-4">
+                                        <li>
+                                            <NavigationMenuLink className="text-center">
+                                                <Link to="/">
+                                                    ¿Quiénes somos?
+                                                </Link>
+                                            </NavigationMenuLink>
+                                        </li>
 
-                    <Button
-                        variant="ghost"
-                        className="rounded-full px-4 text-muted-foreground hover:bg-primary hover:text-primary-foreground"
-                    >
-                        Servicios
-                    </Button>
+                                        <li>
+                                            <NavigationMenuLink className="text-center">
+                                                <Link to="services">
+                                                    Servicios
+                                                </Link>
+                                            </NavigationMenuLink>
+                                        </li>
 
-                    <Button
-                        variant="ghost"
-                        className="rounded-full px-4 text-muted-foreground hover:bg-primary hover:text-primary-foreground"
-                    >
-                        Contratar servicio
-                    </Button>
+                                        <li>
+                                            <NavigationMenuLink className="text-center">
+                                                ¿Cómo funciona?
+                                            </NavigationMenuLink>
+                                        </li>
+                                    </ul>
+                                </NavigationMenuContent>
+                            </NavigationMenuItem>
+
+                            <NavigationMenuItem>
+                                <NavigationMenuTrigger className="h-7 rounded-full border">
+                                    Cita
+                                </NavigationMenuTrigger>
+
+                                <NavigationMenuContent>
+                                    <ul className="grid w-l gap-2 p-4">
+                                        <li>
+                                            <NavigationMenuLink className="text-center">
+                                                Obtener cita
+                                            </NavigationMenuLink>
+                                        </li>
+
+                                        <li>
+                                            <NavigationMenuLink className="text-center">
+                                                Registro de citas
+                                            </NavigationMenuLink>
+                                        </li>
+
+                                    </ul>
+                                </NavigationMenuContent>
+                            </NavigationMenuItem>
+
+                            <NavigationMenuItem>
+                                <NavigationMenuTrigger className="h-7.5 rounded-full border">
+                                    <UserRound className="px-0.5" />Usuario
+                                </NavigationMenuTrigger>
+
+                                <NavigationMenuContent>
+                                    <ul className="grid w-l gap-2 p-4">
+                                        <li>
+                                            <NavigationMenuLink className="text-center">
+                                                Iniciar Sesión
+                                            </NavigationMenuLink>
+                                        </li>
+
+                                        <li>
+                                            <NavigationMenuLink className="text-center">
+                                                Registrarse
+                                            </NavigationMenuLink>
+                                        </li>
+                                    </ul>
+                                </NavigationMenuContent>
+                            </NavigationMenuItem>
+
+
+                        </NavigationMenuList>
+                    </NavigationMenu>
 
                     <Button
                         variant="outline"

@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { ServiceCard } from "./ServiceCard";
 
 export function ServicioList({ servicios }) {
     if (!servicios) {
@@ -10,23 +11,9 @@ export function ServicioList({ servicios }) {
     }
 
     return (
-        <div>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {servicios.map((item) => (
-                <article key={item.id}>
-                    <p><strong>Nombre:</strong> {item.nombre}</p>
-                    <p><strong>Descripcion:</strong> {item.descripcion}</p>
-                    <p><strong>Precio:</strong> ₡{item.precioBase}</p>
-                    <p><strong>Duracion:</strong> {item.duracionMinutos} minutos</p>
-                    <p><strong>Activo:</strong> {item.activo ? "Si" : "No"}</p>
-
-                    {item.imagen && (
-                        <img
-                            src={`http://localhost:3000/uploads/${item.imagen}`}
-                        />
-                    )}
-
-                    <hr />
-                </article>
+                <ServiceCard key={item.id} service={item} />
             ))}
         </div>
     );
