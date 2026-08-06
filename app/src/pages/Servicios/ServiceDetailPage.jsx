@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getServiceById } from "@/services/serviciosService";
-import { AlertCircle, ArrowBigLeft, CircleDollarSign, Clock4, Info, SquareUserRound, Star } from "lucide-react";
+import { AlertCircle, CircleDollarSign, Clock4, Info, SquareUserRound, Star } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 

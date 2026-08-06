@@ -6,7 +6,7 @@ import { ServicioAdicionalList } from "../components/ServicioAdicionalList";
 import { getUsuarios } from "../services/usuariosService";
 import { UsuarioList } from "../components/UsuarioList";
 import { getServicios } from "../services/serviciosService";
-import { ServicioList } from "../components/ServicioList";
+import { ServicioList } from "../components/Servicios/ServicioList";
 
 export function ListadosPage(){
     const [loading, setLoading] = useState(null)

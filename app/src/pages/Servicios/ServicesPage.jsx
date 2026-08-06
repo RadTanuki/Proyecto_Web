@@ -1,4 +1,4 @@
-import { ServicioList } from "@/components/ServicioList";
+import { ServicioList } from "@/components/Servicios/ServicioList";
 import { getServicios } from "@/services/serviciosService";
 import { useEffect, useState } from "react";
 

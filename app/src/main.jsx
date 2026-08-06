@@ -4,8 +4,8 @@ import './index.css'
 import App from './App.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { HomePage } from './pages/HomePage'
-import { ServicesPage } from './pages/ServicesPage'
-import { ServiceDetailPage } from './pages/ServiceDetailPage'
+import { ServicesPage } from './pages/Servicios/ServicesPage'
+import { ServiceDetailPage } from './pages/Servicios/ServiceDetailPage'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
