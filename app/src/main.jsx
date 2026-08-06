@@ -5,6 +5,7 @@ import App from './App.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { HomePage } from './pages/HomePage'
 import { ServicesPage } from './pages/ServicesPage'
+import { ServiceDetailPage } from './pages/ServiceDetailPage'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -17,6 +18,7 @@ createRoot(document.getElementById('root')).render(
           {/* localhost*/}
           <Route path='/' element={<HomePage />}></Route>
           <Route path='/services' element={<ServicesPage />}></Route>
+          <Route path='/services/:id' element={<ServiceDetailPage />}></Route>
           
         </Route>
 

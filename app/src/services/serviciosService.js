@@ -1,4 +1,5 @@
 const API_URL=import.meta.env.VITE_API_URL;
+
 export async function getServicios() {
     try {
         const response = await fetch(`${API_URL}/servicios`);
@@ -10,5 +11,17 @@ export async function getServicios() {
     } catch (error) {
         console.log("Error al obtener servicios", error);
         throw new Error("Error al obtener servicios", { cause: error });
+    }
+}
+
+export async function getServiceById(id) {
+    try {
+        const response = await fetch(`${API_URL}/servicios/${id}`);
+        if (!response.ok) {
+            throw new Error();
+        }
+        return await response.json();
+    } catch {
+        throw new Error("No fue posible cargar los detalles del servicio.");
     }
 }
