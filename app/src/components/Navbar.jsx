@@ -56,14 +56,6 @@ export function Navbar() {
 
                                         <li>
                                             <NavigationMenuLink className="text-center">
-                                                <Link to="services">
-                                                    Servicios
-                                                </Link>
-                                            </NavigationMenuLink>
-                                        </li>
-
-                                        <li>
-                                            <NavigationMenuLink className="text-center">
                                                 ¿Cómo funciona?
                                             </NavigationMenuLink>
                                         </li>
@@ -88,17 +80,12 @@ export function Navbar() {
 
                                         <li>
                                             <NavigationMenuLink className="text-center">
-                                                <Link to="services">
-                                                    Servicios
+                                                <Link to="servicios-adicionales">
+                                                    Servicios Adicionales
                                                 </Link>
                                             </NavigationMenuLink>
                                         </li>
 
-                                        <li>
-                                            <NavigationMenuLink className="text-center">
-                                                ¿Cómo funciona?
-                                            </NavigationMenuLink>
-                                        </li>
                                     </ul>
                                 </NavigationMenuContent>
                             </NavigationMenuItem>

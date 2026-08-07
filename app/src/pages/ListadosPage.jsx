@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getTiposRestriccionHorario } from "../services/tipoRestriccionHorarioService";
 import { RestriccionHorarioList } from "../components/RestriccionHorarioList";
 import { getServiciosAdicionales } from "../services/serviciosAdicionalesServices";
-import { ServicioAdicionalList } from "../components/ServicioAdicionalList";
+import { ServicioAdicionalList } from "../components/Servicios Adicionales/ServicioAdicionalList";
 import { getUsuarios } from "../services/usuariosService";
 import { UsuarioList } from "../components/UsuarioList";
 import { getServicios } from "../services/serviciosService";
