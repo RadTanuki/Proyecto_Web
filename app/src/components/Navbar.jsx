@@ -73,6 +73,38 @@ export function Navbar() {
 
                             <NavigationMenuItem>
                                 <NavigationMenuTrigger className="h-7 rounded-full border">
+                                    Servicios
+                                </NavigationMenuTrigger>
+
+                                <NavigationMenuContent>
+                                    <ul className="grid w-l gap-2 p-4">
+                                        <li>
+                                            <NavigationMenuLink className="text-center">
+                                                <Link to="services">
+                                                    Servicios Principales
+                                                </Link>
+                                            </NavigationMenuLink>
+                                        </li>
+
+                                        <li>
+                                            <NavigationMenuLink className="text-center">
+                                                <Link to="services">
+                                                    Servicios
+                                                </Link>
+                                            </NavigationMenuLink>
+                                        </li>
+
+                                        <li>
+                                            <NavigationMenuLink className="text-center">
+                                                ¿Cómo funciona?
+                                            </NavigationMenuLink>
+                                        </li>
+                                    </ul>
+                                </NavigationMenuContent>
+                            </NavigationMenuItem>
+
+                            <NavigationMenuItem>
+                                <NavigationMenuTrigger className="h-7 rounded-full border">
                                     Cita
                                 </NavigationMenuTrigger>
 

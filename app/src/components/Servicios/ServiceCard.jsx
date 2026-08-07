@@ -1,14 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Heart, Info, Clock4, BadgeInfo, Banknote } from "lucide-react";
+import { Info, Clock4, BadgeInfo, Banknote } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function ServiceCard({ service }) {
+
+    const URL = import.meta.env.VITE_IMAGE_URL;
 
     return (
         <Card className="w-full max-w-sm h-full flex flex-col rounded-[24px] relative group overflow-hidden border-border bg-card text-card-foreground hover:border-primary/50 hover:shadow-xl transition-all duration-300">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             <div className="relative h-48 w-full overflow-hidden bg-muted">
+
+                <img
+                    src={`${URL}/${service.imagen}?width=300&height=200&resize=contain`}
+                    alt={service.nombre}
+                    className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                />
                
                     <p
                         className={`flex w-15 text-center font-bold rounded-full px-3 py-1 text-sm 
@@ -17,7 +25,6 @@ export function ServiceCard({ service }) {
                         {service.activo ? "Activo" : "Inactivo"}
                     </p>
 
-               
             </div>
 
             <CardHeader className="pb-3">

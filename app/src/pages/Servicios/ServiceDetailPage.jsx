@@ -54,7 +54,7 @@ export function ServiceDetailPage() {
 
             <h1 className=" text-3xl m-15">Detalles del servicio seleccionado</h1>
 
-            <Card className="rounded-[40px] border overflow-hidden">
+            <Card className="w-full max-w-3xl rounded-[40px]">
                 {/* {service.imageUrl && (
                     <img
                         src={`${IMAGE_URL}/${service.imageUrl}`}
@@ -64,50 +64,48 @@ export function ServiceDetailPage() {
                 )} */}
 
                 <CardHeader>
-                    <CardTitle className="text-center text-2xl">{service.nombre}</CardTitle>
+                    <CardTitle className="text-center text-3xl mt-2">{service.nombre}</CardTitle>
                 </CardHeader>
 
-                <CardContent className="text-xl space-y-6">
+                <CardContent className="space-y-12 p-10 text-xl">
 
                     {service.descripcion && (
-                        <p className="flex items-start gap-2 leading-relaxed text-muted-foreground">
-                            <Info className="h-5 w-5 mt-1 shrink-0" />
-                            <span >{service.descripcion}</span>
-                        </p>
+                        <div className="flex justify-center">
+                            <p className="flex items-center gap-2 max-w-3xl leading-relaxed text-muted-foreground text-2xl">
+                                <Info className="h-7 w-7 shrink-0" />
+                                <span>{service.descripcion}</span>
+                            </p>
+                        </div>
                     )}
 
-                    <div className="grid grid-cols-2 gap-10">
+                    <div className="grid grid-cols-2 gap-x-12 gap-y-8 place-items-center">
+
+                        <div className="flex items-center gap-3">
+                            <CircleDollarSign className="h-7 w-7 shrink-0" />
+                            Precio Base: ₡{service.precioBase}
+                        </div>
 
                         <p className="flex items-center gap-2">
-                            <CircleDollarSign className="h-4 w-4" />
-                            <h5>Precio Base: ₡{service.precioBase}</h5>
-                        </p>
-
-                        <p className="flex items-center gap-2">
-                            <Clock4 className="h-4 w-4" />
+                            <Clock4 className="h-7 w-7 shrink-0" />
                             Duración: {service.duracionMinutos} minutos
                         </p>
 
                         <p className="flex items-center gap-2">
-                            <Star className="h-4 w-4 text-primary" />
+                            <Star className="h-7 w-7 text-primary shrink-0" />
                             Especialidad: {service.especialidad.nombre}
                         </p>
 
                         {service.empleados?.length > 0 && (
                             <div>
-                                <h3 className="text-center">Instructor(es)</h3>
+                                <h3 className="text-center">Empleados: </h3>
 
                                 {service.empleados.map((empleado) => (
-                                    <p key={empleado.id} className="flex items-start gap-2">
-                                        <SquareUserRound className="h-4 w-4 text-primary mt-1" />
+                                    <p key={empleado.id} className="flex items-start gap-3">
+                                        <SquareUserRound className="h-7 w-7 text-primary shrink-0" />
 
                                         <div>
                                             <p>
                                                 {empleado.usuario.nombre} {empleado.usuario.primerApellido} {empleado.usuario.segundoApellido}
-                                            </p>
-
-                                            <p className="ml-4 text-sm">
-                                                {empleado.descripcion}
                                             </p>
                                         </div>
 
